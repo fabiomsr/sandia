@@ -38,6 +38,7 @@ class CoffeeMakerScreen extends StatefulWidget {
 }
 
 class _CoffeeMakerScreenState extends State<CoffeeMakerScreen> {
+
   CoffeeMaker _coffeeMaker;
 
   @override
@@ -51,16 +52,19 @@ class _CoffeeMakerScreenState extends State<CoffeeMakerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Coffe Maker UI"),
+        title: Text("Coffee Maker UI"),
       ),
       body: Center(
         child: Text(
-          'Make coffe:',
+          'Coffee count: ${_coffeeMaker.count}',
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => _coffeeMaker.brew(),
-        tooltip: 'Make coffe',
+        onPressed: () {
+          _coffeeMaker.brew();
+          setState(() {});
+        },
+        tooltip: 'Make coffee',
         child: Icon(Icons.free_breakfast),
       ),
     );

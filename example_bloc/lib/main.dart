@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
               "/": (context) {
                 return Injector(
                   modules: [ContactListModule()],
-                  child: Container(child: ContactsPage()),
+                  child: ContactsPage(),
                 );
               },
             }));

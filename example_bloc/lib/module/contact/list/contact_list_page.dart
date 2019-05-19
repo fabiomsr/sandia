@@ -30,7 +30,7 @@ class _ContactsPageState extends State<ContactsPage> {
           stream: _bloc.contacts,
           builder: (context, AsyncSnapshot<List<Contact>> snapshot) {
             if (snapshot.hasData) {
-              return _ContactList(
+              return ContactList(
                   contacts: snapshot.data,
                   onContactTapped: (contact) =>
                       _showContactPage(context, contact));
@@ -55,11 +55,11 @@ class _ContactsPageState extends State<ContactsPage> {
 ///   Contact List
 ///
 
-class _ContactList extends StatelessWidget {
+class ContactList extends StatelessWidget {
   final List<Contact> contacts;
   final Function(Contact) onContactTapped;
 
-  _ContactList({@required this.contacts, @required this.onContactTapped});
+  ContactList({@required this.contacts, @required this.onContactTapped});
 
   @override
   Widget build(BuildContext context) {

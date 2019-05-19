@@ -51,10 +51,11 @@ class Injector extends InheritedWidget {
 
   factory Injector({
     Key key,
-    List<Provider> providers = const [],
+    List<Provider> providers,
     List<Module> modules = const [],
     @required Widget child,
   }) {
+    providers = providers == null ? [] : providers;
     modules.forEach((module) => providers.addAll(module.providers()));
     final providerMap =
         Map<Type, Provider>.fromIterable(providers, key: (item) => item.type);

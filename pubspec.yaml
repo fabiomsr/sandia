@@ -1,5 +1,5 @@
 name: sandia
-description: A lightweight dependency injection package for Flutter
+description: A lightweight package inspired in SwitfInject and Koin libraries for Flutter.
 version: 0.0.1
 author:
 homepage:

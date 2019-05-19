@@ -1,10 +1,4 @@
-
-import 'package:dio/dio.dart';
-import 'package:example_bloc/data/datasource/impl/random_user_datasource.dart';
-import 'package:example_bloc/data/repository/contact_repository.dart';
-import 'package:example_bloc/data/usecase/contact_list_use_case.dart';
 import 'package:example_bloc/model/contact.dart';
-import 'package:example_bloc/model/mapper/mapper.dart';
 import 'package:example_bloc/module/contact/detail/contact_detail_page.dart';
 import 'package:example_bloc/module/contact/list/bloc/contact_list_bloc.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +32,8 @@ class _ContactsPageState extends State<ContactsPage> {
             if (snapshot.hasData) {
               return _ContactList(
                   contacts: snapshot.data,
-                  onContactTapped: (contact) => _showContactPage(context, contact));
+                  onContactTapped: (contact) =>
+                      _showContactPage(context, contact));
             } else if (snapshot.hasError) {
               return Text(snapshot.error.toString());
             }
@@ -76,8 +71,7 @@ class _ContactList extends StatelessWidget {
   List<_ContactListItem> _buildContactList(List<Contact> contacts) {
     return contacts
         .map((contact) => new _ContactListItem(
-            contact: contact,
-            onTap: () => onContactTapped(contact)))
+            contact: contact, onTap: () => onContactTapped(contact)))
         .toList();
   }
 }

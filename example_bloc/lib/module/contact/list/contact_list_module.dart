@@ -5,7 +5,7 @@ import 'package:sandia/sandia.dart';
 class ContactListModule implements Module {
   @override
   List<Provider> providers() => [
-    Single(ContactListBloc, (r) => ContactListBloc(r.get(ContactListUseCase)))
-  ];
-
+        Single(
+            ContactListBloc, (r) => ContactListBloc(r.get(ContactListUseCase)))
+      ];
 }

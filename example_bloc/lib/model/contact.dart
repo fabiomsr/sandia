@@ -1,5 +1,4 @@
 class Contact {
-
   final String fullName;
   final String gender;
   final String email;
@@ -7,8 +6,13 @@ class Contact {
   final Location location;
   final List<Phone> phones;
 
-  const Contact({this.fullName, this.gender, this.email, this.imageUrl,
-     this.location, this.phones});
+  const Contact(
+      {this.fullName,
+      this.gender,
+      this.email,
+      this.imageUrl,
+      this.location,
+      this.phones});
 }
 
 class Location {
